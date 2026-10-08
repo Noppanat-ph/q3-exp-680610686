@@ -5,9 +5,11 @@ export function OverviewCards() {
   const expenses = useItemStore((state) => state.expenses);
   const totalItems = expenses.length;
 
-  const totalSpent = expenses.reduce(function (spent, amount) {
-    return spent+0;
+  const totalSpent = expenses.reduce((total, price) => {
+    return total + price.amount;
   }, 0);
+
+  const avgExpenses = totalSpent / totalItems;
 
   return (
     <div className="grid gap-4 md:grid-cols-3">
@@ -16,7 +18,9 @@ export function OverviewCards() {
           <CardTitle className="text-sm font-medium">Total Spent</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-red-500 font-bold">฿{totalSpent}</div>
+          <div className="text-2xl text-red-500 font-bold">
+            ฿{totalSpent.toFixed(2)}
+          </div>
         </CardContent>
       </Card>
       <Card>
@@ -34,7 +38,9 @@ export function OverviewCards() {
           <CardTitle className="text-sm font-medium">Average Expense</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-green-700 font-bold">...</div>
+          <div className="text-2xl text-green-700 font-bold">
+            {avgExpenses.toFixed(2)}
+          </div>
         </CardContent>
       </Card>
     </div>
