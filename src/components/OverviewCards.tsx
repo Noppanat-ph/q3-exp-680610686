@@ -5,6 +5,10 @@ export function OverviewCards() {
   const expenses = useItemStore((state) => state.expenses);
   const totalItems = expenses.length;
 
+  const totalSpent = expenses.reduce(function (spent, amount) {
+    return spent+0;
+  }, 0);
+
   return (
     <div className="grid gap-4 md:grid-cols-3">
       <Card>
@@ -12,7 +16,7 @@ export function OverviewCards() {
           <CardTitle className="text-sm font-medium">Total Spent</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-red-500 font-bold">฿...</div>
+          <div className="text-2xl text-red-500 font-bold">฿{totalSpent}</div>
         </CardContent>
       </Card>
       <Card>

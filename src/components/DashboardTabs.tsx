@@ -1,7 +1,25 @@
+import { Button } from "@/components/ui/button";
+// import type {
+//   Tabs,
+//   TabsList,
+//   TabsTrigger,
+//   TabsContent,
+//   tabsListVariants,
+// } from "@base-ui/react";
+
+import { Summary, LayoutGrid } from "lucide-react";
+
 export function DashboardTabs() {
   return (
     <div className="w-full">
-      <h1>This is the Dashboard Tabs Component</h1>
+      <Button variant="outline">
+        <Summary className="h-4 w-4" />
+        Overview
+      </Button>
+      <Button variant="outline">
+        <LayoutGrid className="h-4 w-4" />
+        category
+      </Button>
     </div>
   );
 }
