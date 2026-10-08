@@ -10,11 +10,11 @@ export function DashboardTabs() {
     <Tabs defaultValue="Overview">
       <TabsList>
         <TabsTrigger value={"Overview"}>
-          <Summary />
+          <Summary className="h-4 w-4" />
           Overview
         </TabsTrigger>
         <TabsTrigger value={"Category"}>
-          <LayoutGrid />
+          <LayoutGrid className="h-4 w-4" />
           By Category
         </TabsTrigger>
       </TabsList>
